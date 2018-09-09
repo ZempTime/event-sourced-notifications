@@ -1,0 +1,5 @@
+{
+  "name": "event-sourced-notifications",
+  "private": true,
+  "dependencies": {}
+}
