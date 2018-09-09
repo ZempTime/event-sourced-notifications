@@ -1,24 +1,5 @@
-# README
+# Notifications
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I've never been happy with the way I've handled notifications in Rails applications. Then I saw a pattern in "On Writing Software Well" I'd like to understand ([this](https://public.3.basecamp.com/p/iuorgPMXYrxY9jGrVfB8UzWc)).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This repo is a playground to attempt understanding.
