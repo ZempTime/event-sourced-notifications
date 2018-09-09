@@ -1,0 +1,30 @@
+<h1>Administering: <%= @case.name %></h1>
+<p><%= link_to "back", cases_path %></p>
+
+<%= form_for @case do |f| %>
+  <% if @case.errors.any? %>
+    <ul>
+      <% @case.errors.each do |error| %>
+        <li><%= error.message %></li>
+      <% end%>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br />
+
+  <%= f.label :status %>
+  <%= f.select :status, options_for_select(Case.statuses.map {|k, v| [k.humanize.capitalize, k]}) %>
+  <br />
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <br />
+
+  <%= f.label :user %>
+  <%= f.select :user_id, options_for_select(User.all.map {|user| [user.name, user.id]}) %>
+  <br />
+
+  <%= f.submit %>
+<% end %>

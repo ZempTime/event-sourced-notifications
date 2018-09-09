@@ -1,7 +1,8 @@
 class Case < ApplicationRecord
   enum status: { waiting: 0, approved: 1, active: 2, complete: 3}
-
   validate :status_transition_allowed
+
+  attr_accessor :user_id
 
   def transitionable_statuses(status)
     current = self.class.statuses[status]
