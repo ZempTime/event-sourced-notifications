@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+ornery:
+  author: hairy_dog_man (User)
+  content: Great now I have applesauce everywhere ugh
+
+enthusiastic:
+  author: agnosticio (User)
+  content: Wow what a beautiful day with so much coffee
