@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recordable: one
+  recordable_type: Recordable
+  recordable_previous: one
+  recordable_previous_type: Recordable previous
+  context: one
+  creator: one
+  action: MyString
+
+two:
+  recordable: two
+  recordable_type: Recordable
+  recordable_previous: two
+  recordable_previous_type: Recordable previous
+  context: two
+  creator: two
+  action: MyString

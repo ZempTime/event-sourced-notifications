@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_09_171209) do
+ActiveRecord::Schema.define(version: 2018_09_09_173309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,35 @@ ActiveRecord::Schema.define(version: 2018_09_09_171209) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "recordable_type"
+    t.bigint "recordable_id"
+    t.string "recordable_previous_type"
+    t.bigint "recordable_previous_id"
+    t.bigint "context_id"
+    t.integer "creator_id"
+    t.string "action"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["context_id"], name: "index_events_on_context_id"
+    t.index ["recordable_previous_type", "recordable_previous_id"], name: "index_events_on_recordable_previous"
+    t.index ["recordable_type", "recordable_id"], name: "index_events_on_recordable_type_and_recordable_id"
+  end
+
+  create_table "recordings", force: :cascade do |t|
+    t.bigint "context_id"
+    t.integer "creator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["context_id"], name: "index_recordings_on_context_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "events", "contexts"
+  add_foreign_key "recordings", "contexts"
 end
