@@ -1,3 +1,1 @@
-["Adam", "Leonard", "Agnosticio", "Hairy guy with dog"].each do |name|
-  User.create(name: name)
-end
+# Run `rake db:fixtures:load` to get starting set of data.
